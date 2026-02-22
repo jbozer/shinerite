@@ -179,43 +179,62 @@
     }
     .cta-phone:hover { transform: translateY(-2px); background: var(--accent-hover); }
 
-    /* CONTACT FORM */
-    .contact-form {
-      max-width: 500px;
+    /* QUOTE CTA */
+    .quote-section {
+      background: var(--light);
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .quote-box {
+      max-width: 600px;
       margin: 0 auto;
+      background: var(--white);
+      border: 3px solid var(--accent);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      box-shadow: 0 8px 30px rgba(232, 101, 58, 0.12);
     }
-    .contact-form input,
-    .contact-form textarea,
-    .contact-form select {
-      width: 100%;
-      padding: 0.9rem 1rem;
-      border: 2px solid #dde1e7;
-      border-radius: 10px;
-      font-size: 1rem;
-      font-family: inherit;
-      margin-bottom: 1rem;
-      transition: border-color 0.2s;
-    }
-    .contact-form input:focus,
-    .contact-form textarea:focus,
-    .contact-form select:focus {
-      outline: none;
-      border-color: var(--primary);
-    }
-    .contact-form textarea { min-height: 120px; resize: vertical; }
-    .contact-form button {
-      width: 100%;
-      padding: 1rem;
+    .quote-box .quote-emoji { font-size: 3.5rem; margin-bottom: 1rem; }
+    .quote-box h2 { font-size: 1.8rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem; }
+    .quote-box p { color: var(--gray); font-size: 1.05rem; margin-bottom: 1.5rem; line-height: 1.7; }
+    .quote-box .text-btn {
+      display: inline-block;
       background: var(--accent);
       color: var(--white);
-      border: none;
-      border-radius: 10px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s;
+      font-size: 1.4rem;
+      font-weight: 800;
+      padding: 1.1rem 3rem;
+      border-radius: 14px;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
     }
-    .contact-form button:hover { background: var(--accent-hover); }
+    .quote-box .text-btn:hover {
+      transform: translateY(-2px);
+      background: var(--accent-hover);
+      box-shadow: 0 8px 25px rgba(232, 101, 58, 0.3);
+    }
+    .quote-box .or-call {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: var(--gray);
+    }
+    .quote-box .or-call a {
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .quote-steps {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .quote-step {
+      text-align: center;
+    }
+    .quote-step .qs-icon { font-size: 2rem; margin-bottom: 0.3rem; }
+    .quote-step .qs-label { font-size: 0.9rem; font-weight: 600; color: var(--primary); }
 
     /* PRICING CARDS */
     .price-tag {
@@ -250,14 +269,14 @@
 
   <nav>
     <div class="logo">Shine<span>Rite</span></div>
-    <a href="tel:+14805942517" class="cta-nav">📞 Call Now</a>
+    <a href="sms:+14805942517" class="cta-nav">💬 Text Us</a>
   </nav>
 
   <section class="hero">
     <h1>Junk Gone. <span>Space Reclaimed.</span></h1>
     <p>Fast, affordable junk removal and cleanout services in Lehi, UT and the Utah Valley area. We haul it all so you don't have to.</p>
-    <a href="tel:+14805942517" class="hero-cta">📞 (480) 594-2517</a>
-    <p class="hero-sub">Free estimates · Same-day service available</p>
+    <a href="sms:+14805942517" class="hero-cta">📸 Text Photos for a Free Quote</a>
+    <p class="hero-sub">Free estimates · Same-day service · <a href="tel:+14805942517" style="color:var(--white);text-decoration:underline;">(480) 594-2517</a></p>
   </section>
 
   <section>
@@ -358,6 +377,32 @@
     </div>
   </section>
 
+  <!-- GET A QUOTE - THE MAIN EVENT -->
+  <section class="quote-section" id="quote">
+    <div class="quote-box">
+      <div class="quote-emoji">📸</div>
+      <h2>Get a Free Quote in Minutes</h2>
+      <p>Snap a few photos of what you need hauled, text them to us with a short description, and we'll send you a quote fast.</p>
+      <div class="quote-steps">
+        <div class="quote-step">
+          <div class="qs-icon">📷</div>
+          <div class="qs-label">Snap Photos</div>
+        </div>
+        <div class="quote-step">
+          <div class="qs-icon">💬</div>
+          <div class="qs-label">Text Us</div>
+        </div>
+        <div class="quote-step">
+          <div class="qs-icon">✅</div>
+          <div class="qs-label">Get Your Quote</div>
+        </div>
+      </div>
+      <a href="sms:+14805942517" class="text-btn">💬 Text Us Now</a>
+      <p class="or-call">Or call: <a href="tel:+14805942517">(480) 594-2517</a></p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
   <section>
     <div class="container">
       <h2 class="section-title">How It Works</h2>
@@ -365,8 +410,8 @@
       <div class="steps">
         <div>
           <div class="step-num">1</div>
-          <h3>Call or Text</h3>
-          <p>Tell us what you need hauled. Send photos for a quick quote.</p>
+          <h3>Text or Call</h3>
+          <p>Send us photos and tell us what needs to go. We'll quote you fast.</p>
         </div>
         <div>
           <div class="step-num">2</div>
@@ -384,34 +429,9 @@
 
   <section class="cta-section">
     <h2>Ready to Clear the Clutter?</h2>
-    <p>Call or text for a free estimate. Same-day service available.</p>
-    <a href="tel:+14805942517" class="cta-phone">📞 (480) 594-2517</a>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Get a Free Quote</h2>
-      <p class="section-sub">Fill out the form and we'll get back to you fast.</p>
-      <form class="contact-form" action="https://formspree.io/f/xnjbgggl" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="tel" name="phone" placeholder="Phone Number" required>
-        <input type="email" name="email" placeholder="Email (optional)">
-        <select name="service">
-          <option value="" disabled selected>What do you need?</option>
-          <option>Junk Removal</option>
-          <option>Estate Cleanout</option>
-          <option>Furniture Removal</option>
-          <option>Construction Debris</option>
-          <option>Yard Waste</option>
-          <option>Other</option>
-        </select>
-        <textarea name="message" placeholder="Tell us about the job (size, location, timeline)..."></textarea>
-        <p style="font-size:0.9rem;color:var(--gray);margin-bottom:1rem;text-align:center;">📸 <strong>Have photos?</strong> Text them to <a href="sms:+14805942517" style="color:var(--accent);font-weight:600;">(480) 594-2517</a> for a faster quote!</p>
-        <input type="hidden" name="_subject" value="New ShineRite Quote Request">
-        <input type="hidden" name="_next" value="https://jbozer.github.io/shinerite/#contact">
-        <button type="submit">Get My Free Quote →</button>
-      </form>
-    </div>
+    <p>Text us photos for a free quote. Same-day service available.</p>
+    <a href="sms:+14805942517" class="cta-phone">💬 Text Us Now</a>
+    <p style="margin-top:0.8rem;font-size:0.95rem;opacity:0.8;">Or call: <a href="tel:+14805942517" style="color:var(--white);text-decoration:underline;">(480) 594-2517</a></p>
   </section>
 
   <footer>
