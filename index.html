@@ -392,11 +392,11 @@
     <div class="container">
       <h2 class="section-title">Get a Free Quote</h2>
       <p class="section-sub">Fill out the form and we'll get back to you fast.</p>
-      <form class="contact-form" id="quoteForm">
-        <input type="text" name="name" id="fname" placeholder="Your Name" required>
-        <input type="tel" name="phone" id="fphone" placeholder="Phone Number" required>
-        <input type="email" name="email" id="femail" placeholder="Email (optional)">
-        <select name="service" id="fservice">
+      <form class="contact-form" action="https://formspree.io/f/xnjbgggl" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="email" name="email" placeholder="Email (optional)">
+        <select name="service">
           <option value="" disabled selected>What do you need?</option>
           <option>Junk Removal</option>
           <option>Estate Cleanout</option>
@@ -405,7 +405,9 @@
           <option>Yard Waste</option>
           <option>Other</option>
         </select>
-        <textarea name="message" id="fmessage" placeholder="Tell us about the job (size, location, timeline)..."></textarea>
+        <textarea name="message" placeholder="Tell us about the job (size, location, timeline)..."></textarea>
+        <input type="hidden" name="_subject" value="New ShineRite Quote Request">
+        <input type="hidden" name="_next" value="https://jbozer.github.io/shinerite/#contact">
         <button type="submit">Get My Free Quote →</button>
       </form>
     </div>
@@ -415,30 +417,6 @@
     <p>&copy; 2026 ShineRite Cleansing · Lehi, Utah &amp; surrounding areas · All rights reserved.</p>
   </footer>
 
-  <script>
-    document.getElementById('quoteForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var name = document.getElementById('fname').value;
-      var phone = document.getElementById('fphone').value;
-      var email = document.getElementById('femail').value;
-      var service = document.getElementById('fservice').value;
-      var message = document.getElementById('fmessage').value;
-
-      var subject = encodeURIComponent('Free Quote Request from ' + name);
-      var body = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'Phone: ' + phone + '\n' +
-        'Email: ' + (email || 'N/A') + '\n' +
-        'Service: ' + (service || 'N/A') + '\n' +
-        'Details: ' + (message || 'N/A')
-      );
-
-      window.location.href = 'mailto:jbozer00@gmail.com?subject=' + subject + '&body=' + body;
-
-      // Show confirmation
-      this.innerHTML = '<p style="text-align:center;font-size:1.2rem;padding:2rem;">✅ <strong>Opening your email app now!</strong><br><br>If it didn\'t open, you can call or text us directly at <a href="tel:+14805942517" style="color:var(--accent);font-weight:700;">(480) 594-2517</a></p>';
-    });
-  </script>
 
 </body>
 </html>
