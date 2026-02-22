@@ -392,7 +392,7 @@
     <div class="container">
       <h2 class="section-title">Get a Free Quote</h2>
       <p class="section-sub">Fill out the form and we'll get back to you fast.</p>
-      <form class="contact-form" action="https://formspree.io/f/xnjbgggl" method="POST">
+      <form class="contact-form" action="https://formspree.io/f/xnjbgggl" method="POST" enctype="multipart/form-data">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="tel" name="phone" placeholder="Phone Number" required>
         <input type="email" name="email" placeholder="Email (optional)">
@@ -406,6 +406,8 @@
           <option>Other</option>
         </select>
         <textarea name="message" placeholder="Tell us about the job (size, location, timeline)..."></textarea>
+        <label style="display:block;font-size:0.95rem;color:var(--gray);margin-bottom:0.4rem;">📸 Upload photos for a faster, more accurate quote:</label>
+        <input type="file" name="photos" accept="image/*" multiple style="margin-bottom:1rem;">
         <input type="hidden" name="_subject" value="New ShineRite Quote Request">
         <input type="hidden" name="_next" value="https://jbozer.github.io/shinerite/#contact">
         <button type="submit">Get My Free Quote →</button>
